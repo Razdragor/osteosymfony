@@ -58,6 +58,13 @@ class User extends BaseUser
      */
     private $isActivate;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="company_id", type="integer", nullable=true)
+     */
+    private $companyId;
+
 
     /**
      * Get id
@@ -211,6 +218,30 @@ class User extends BaseUser
     public function getIsActivate()
     {
         return $this->isActivate;
+    }
+
+    /**
+     * Set companyId
+     *
+     * @param integer $companyId
+     *
+     * @return User
+     */
+    public function setCompanyId($companyId)
+    {
+        $this->isActivate = $companyId;
+
+        return $this;
+    }
+
+    /**
+     * Get companyId
+     *
+     * @return int
+     */
+    public function getCompanyId()
+    {
+        return $this->companyId;
     }
 }
 
