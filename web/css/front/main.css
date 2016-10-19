@@ -65,6 +65,13 @@ h2 {
     font-size: 20px;
     margin: 5px 0;
 }
+.img-home img{
+    max-width: 100%;
+}
+.img-home{
+    padding-top: 73px;
+    margin-bottom: -5px;
+}
 
 .profil
 {
