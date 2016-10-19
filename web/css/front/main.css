@@ -1,0 +1,72 @@
+.head {
+    background-color: #42b8dc;
+    height: 460px;
+    width: 100%;
+}
+
+.left-head {
+    background: transparent url(../../images/qsn.png) scroll no-repeat 0 0;
+    height: 300px;
+    float: left;
+    width: 42%;
+}
+
+.middle-head {
+    background: #42b8dc url(../../images/logo.png) scroll no-repeat 50%;
+    height: 145px;
+    float: left;
+    margin: 0 auto;
+    width: 14%;
+}
+
+.right-head {
+    color: #FFF;
+    padding-top: 16px;
+    font-size: 18px;
+    background-color: #42b8dc;
+    width: 44%;
+    float: right;
+}
+
+.link-bold
+{
+    color: white;
+    font-weight: bold;
+}
+
+.fondateurs {
+    background-color: #ebebeb;
+}
+
+.lf {
+    height: 200px;
+    padding: 10px 0 0 20px;
+}
+
+.left-fond,.right-fond{
+    height: 550px;
+    width: 50%;
+    float: left;
+    background-color: #ebebeb;
+}
+
+.img
+{
+    text-align: center;
+}
+
+h1 {
+    color: #42b8dc;
+    font-size: 22px;
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+h2 {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.profil
+{
+    padding: 30px 80px;
+}
