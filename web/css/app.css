@@ -88,7 +88,8 @@ h2 {
 #links{
     width:100%;
     margin:0 0 -1px;
-    padding:20px;
+    padding-top:20px;
+    padding-bottom:20px;
     font-size:14px;
     background-color:#FFF;
     color: #ddd;
