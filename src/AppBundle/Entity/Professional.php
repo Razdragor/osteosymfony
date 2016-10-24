@@ -5,34 +5,18 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * ProfessionalInformations
+ * Professional
  *
- * @ORM\Table(name="professional_informations")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ProfessionalInformationsRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ProfessionalRepository")
  */
-class ProfessionalInformations
+class Professional extends User
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="user_id", type="integer", unique=true)
-     */
-    private $userId;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="price", type="decimal", precision=2, scale=0)
-     */
+    * @var string
+    *
+    * @ORM\Column(name="price", type="decimal", precision=2, scale=0)
+    */
     private $price;
 
     /**
@@ -49,47 +33,12 @@ class ProfessionalInformations
      */
     private $qualifications;
 
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set userId
-     *
-     * @param integer $userId
-     *
-     * @return ProfessionalInformations
-     */
-    public function setUserId($userId)
-    {
-        $this->userId = $userId;
-
-        return $this;
-    }
-
-    /**
-     * Get userId
-     *
-     * @return int
-     */
-    public function getUserId()
-    {
-        return $this->userId;
-    }
-
     /**
      * Set price
      *
      * @param string $price
      *
-     * @return ProfessionalInformations
+     * @return Professional
      */
     public function setPrice($price)
     {
@@ -113,7 +62,7 @@ class ProfessionalInformations
      *
      * @param string $aggregation
      *
-     * @return ProfessionalInformations
+     * @return Professional
      */
     public function setAggregation($aggregation)
     {
@@ -137,7 +86,7 @@ class ProfessionalInformations
      *
      * @param string $qualifications
      *
-     * @return ProfessionalInformations
+     * @return Professional
      */
     public function setQualifications($qualifications)
     {
