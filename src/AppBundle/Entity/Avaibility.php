@@ -22,11 +22,11 @@ class Avaibility
     private $id;
 
     /**
-     * @var int
+     * @var string
      *s
-     * @ORM\Column(name="day_id", type="integer")
+     * @ORM\Column(name="day", type="string")
      */
-    private $dayId;
+    private $day;
 
     /**
      * @var \DateTime
@@ -61,27 +61,27 @@ class Avaibility
     }
 
     /**
-     * Set dayId
+     * Set day
      *
-     * @param integer $dayId
+     * @param string $day
      *
      * @return Avaibility
      */
-    public function setDayId($dayId)
+    public function setDay($day)
     {
-        $this->dayId = $dayId;
+        $this->day = $day;
 
         return $this;
     }
 
     /**
-     * Get dayId
+     * Get day
      *
-     * @return int
+     * @return string
      */
-    public function getDayId()
+    public function getDay()
     {
-        return $this->dayId;
+        return $this->day;
     }
 
     /**

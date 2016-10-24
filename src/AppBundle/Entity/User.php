@@ -38,11 +38,10 @@ class User extends BaseUser
     protected $lastname;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="job", type="integer",nullable=true)
+     * @ORM\ManyToOne(targetEntity="UserType", inversedBy="users")
+     * @ORM\JoinColumn(name="usertype_id", referencedColumnName="id")
      */
-    private $job;
+    private $type;
 
     /**
      * @var \DateTime
@@ -61,7 +60,8 @@ class User extends BaseUser
     /**
      * @var int
      *
-     * @ORM\Column(name="company_id", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Company", inversedBy="users")
+     * @ORM\JoinColumn(name="company_id", referencedColumnName="id")
      */
     private $companyId;
 
@@ -149,27 +149,27 @@ class User extends BaseUser
     }
 
     /**
-     * Set job
+     * Set type
      *
-     * @param integer $job
+     * @param integer $type
      *
      * @return User
      */
-    public function setJob($job)
+    public function setType(UserType $type)
     {
-        $this->job = $job;
+        $this->type = $type;
 
         return $this;
     }
 
     /**
-     * Get job
+     * Get type
      *
      * @return int
      */
-    public function getJob()
+    public function getType()
     {
-        return $this->job;
+        return $this->type;
     }
 
     /**
