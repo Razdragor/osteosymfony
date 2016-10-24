@@ -10,7 +10,7 @@ security:
         ROLE_COMPANY:       ROLE_USER
         ROLE_PROF:       ROLE_USER
         ROLE_SIMPLE:       ROLE_USER
-        ROLE_SUPER_ADMIN: ROLE_ADMIN
+        ROLE_ADMIN: ROLE_ADMIN
 
     providers:
         fos_userbundle:

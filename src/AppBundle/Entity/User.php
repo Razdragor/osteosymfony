@@ -54,7 +54,7 @@ class User extends BaseUser
     /**
      * @var int
      *
-     * @ORM\Column(name="isActivate", type="integer",nullable=true)
+         * @ORM\Column(name="isActivate", type="integer",nullable=true)
      */
     private $isActivate;
 
@@ -243,5 +243,12 @@ class User extends BaseUser
     {
         return $this->companyId;
     }
+//    public function __construct($class)
+//    {
+//        parent::__construct($class);
+//        $now = new \Datetime();
+//        $this->created = $now;
+//        $this->updated = $now;
+//    }
 }
 
