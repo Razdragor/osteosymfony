@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Company
 {
     /**
-     * @ORM\OneToMany(targetEntity="User", mappedBy="type")
+     * @ORM\OneToMany(targetEntity="User", mappedBy="company_id")
      */
     protected $users;
 
