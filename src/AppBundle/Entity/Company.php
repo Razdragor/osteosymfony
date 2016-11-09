@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,6 +13,16 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Company
 {
+    /**
+     * @ORM\OneToMany(targetEntity="User", mappedBy="type")
+     */
+    protected $users;
+
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
+
     /**
      * @var int
      *
@@ -65,7 +76,7 @@ class Company
      *
      * @param string $name
      *
-     * @return Enterprise
+     * @return Company
      */
     public function setName($name)
     {
@@ -89,7 +100,7 @@ class Company
      *
      * @param string $address
      *
-     * @return Enterprise
+     * @return Company
      */
     public function setAddress($address)
     {
@@ -113,7 +124,7 @@ class Company
      *
      * @param string $city
      *
-     * @return Enterprise
+     * @return Company
      */
     public function setCity($city)
     {
@@ -137,7 +148,7 @@ class Company
      *
      * @param integer $phone
      *
-     * @return Enterprise
+     * @return Company
      */
     public function setPhone($phone)
     {

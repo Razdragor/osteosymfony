@@ -1,0 +1,26 @@
+#content .contact {
+  background-color: #42b8dc;
+  height: 460px;
+  width: 100%;
+  margin-top: 80px;
+  padding: 15px;
+}
+
+#content .contact h1 {
+  color: #fff;
+  font-size: 26px;
+  text-align: center;
+}
+
+#content .contact h2 {
+  color: #fff;
+  font-size: 24px;
+}
+
+#content div.contact div.bloc-contact {
+  font-size: 10px;
+}
+
+#content div.contact div.bloc-contact label{
+  margin: 10px;
+}

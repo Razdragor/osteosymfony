@@ -22,16 +22,14 @@ class RendezVous
     private $id;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="user_id", type="integer")
+     * @ORM\OneToOne(targetEntity="User")
      */
     private $userId;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="professional_id", type="integer")
+     * @ORM\OneToOne(targetEntity="User")
      */
     private $professionalId;
 

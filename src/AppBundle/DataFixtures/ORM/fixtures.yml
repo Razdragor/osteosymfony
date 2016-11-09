@@ -1,0 +1,78 @@
+AppBundle\Entity\Day:
+    day0:
+        name: 'Dimanche'
+    day1:
+        name: 'Samedi'
+    day2:
+        name: 'Vendredi'
+    day3:
+        name: 'Jeudi'
+    day4:
+        name: 'Mercredi'
+    day5:
+        name: 'Mardi'
+    day6:
+        name: 'Lundi'
+
+AppBundle\Entity\UserType:
+    usertype0:
+        name: 'Patient'
+    usertype1:
+        name: 'Professional'
+    usertype2:
+        name: 'Company'
+    usertype3:
+        name: 'Employee'
+    usertype4:
+        name: 'Admin'
+
+AppBundle\Entity\Company:
+    company{1..10}:
+        name: '<company()>'
+        address: '<streetAddress()>'
+        city: '<city()>'
+        phone: '<phoneNumber()>'
+
+
+AppBundle\Entity\User:
+    user{1..20}:
+        username: '<username()>'
+        firstname: '<firstName()>'
+        lastname: '<lastName()>'
+        password: 'admin'
+        email: '<email()>'
+        usertype_id: '@usertype0'
+
+    user{21..25}:
+        username: '<username()>'
+        firstname: '<firstName()>'
+        lastname: '<lastName()>'
+        password: 'admin'
+        email: '<email()>'
+        usertype_id: '@usertype3'
+        company_id: '@company1'
+
+    user{26..35}:
+        username: '<username()>'
+        firstname: '<firstName()>'
+        lastname: '<lastName()>'
+        password: 'admin'
+        email: '<email()>'
+        usertype_id: '@usertype3'
+        company_id: '@company2'
+
+    user{36..50}:
+        username: '<username()>'
+        firstname: '<firstName()>'
+        lastname: '<lastName()>'
+        password: 'admin'
+        email: '<email()>'
+        usertype_id: '@usertype1'
+
+    user{51..60}:
+        username: '<username()>'
+        firstname: '<firstName()>'
+        lastname: '<lastName()>'
+        password: 'admin'
+        email: '<email()>'
+        usertype_id: '@usertype2'

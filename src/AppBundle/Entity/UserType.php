@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,6 +13,17 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class UserType
 {
+    /**
+     * @ORM\OneToMany(targetEntity="User", mappedBy="type")
+     */
+    protected $users;
+
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
+
+
     /**
      * @var int
      *

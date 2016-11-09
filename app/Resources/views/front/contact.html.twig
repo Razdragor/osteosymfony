@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<section id="content" role="main">
+  <div class="contact">
+    <form action="" method="post" enctype="multipart/form-data">
+    <div class="bloc-contact">
+      <h2>Données de contact</h2>
+      <div class="">
+        <label>Nom:</label>
+        <input type="text" name="nom" placeholder="Nom"/>
+      </div>
+      <div class="">
+        <label>Prénom:</label>
+        <input type="text" name="prenom" maxlength="25" placeholder="Prénom"/>
+      </div>
+      <div class="">
+        <label>Email:</label>
+        <input type="text" name="email" placeholder="Email"/>
+      </div>
+      <div class="">
+        <label>Numéro:</label>
+        <input type="text" name="numero" maxlength="10" placeholder="Numéro"/>
+      </div>
+    </div>
+    <div class="bloc-contact">
+      <h2>Demande de contact</h2>
+      <div class="">
+        <label>Sujet:</label>
+        <input type="text" name="sujet" placeholder="Sujet"/>
+      </div>
+      <div class="">
+        <label>Message:</label>
+        <textarea name="message" cols="30" rows="8"></textarea>
+      </div>
+    </div>
+    <div>
+      <button value="Envoyer"/>
+    </div>
+    </form>
+  </div>
+</section>
+{% endblock %}
