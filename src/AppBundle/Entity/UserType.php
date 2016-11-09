@@ -23,7 +23,6 @@ class UserType
         $this->users = new ArrayCollection();
     }
 
-
     /**
      * @var int
      *

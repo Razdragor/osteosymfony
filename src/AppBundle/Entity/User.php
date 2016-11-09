@@ -22,7 +22,6 @@ class User extends BaseUser
      */
     protected $id;
 
-
     /**
      * @var string
      *
@@ -56,15 +55,6 @@ class User extends BaseUser
          * @ORM\Column(name="isActivate", type="integer",nullable=true)
      */
     private $isActivate;
-
-    /**
-     * @var int
-     *
-     * @ORM\ManyToOne(targetEntity="Company", inversedBy="users")
-     * @ORM\JoinColumn(name="company_id", referencedColumnName="id")
-     */
-    private $companyId;
-
 
     /**
      * Get id
@@ -221,6 +211,14 @@ class User extends BaseUser
     }
 
     /**
+     * @var int
+     *
+     * @ORM\ManyToOne(targetEntity="Company", inversedBy="users")
+     * @ORM\JoinColumn(name="company_id", referencedColumnName="id")
+     */
+    private $companyId;
+
+    /**
      * Set companyId
      *
      * @param integer $companyId
@@ -229,7 +227,7 @@ class User extends BaseUser
      */
     public function setCompanyId($companyId)
     {
-        $this->isActivate = $companyId;
+        $this->companyId = $companyId;
 
         return $this;
     }
