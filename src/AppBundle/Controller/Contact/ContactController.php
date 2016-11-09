@@ -22,8 +22,20 @@ class AppController extends Controller
           ->add('phone', TextType::class)
           ->add('subject', TextType::class)
           ->add('message', TextareaType::class)
-          ->add('save', SubmitType::class, array('label' => 'Create Task'))
+          ->add('save', SubmitType::class, array('label' => 'Envoyez!',
+        'attr' => [
+          'class' => 'success'
+          ]))
           ->getForm();
+
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+      
+         $name = $form->getData()['name'];
+         $this->sendMail($name);
+
+     }
 
       return $this->render('front/contact.html.twig', array(
           'form' => $form->createView(),
