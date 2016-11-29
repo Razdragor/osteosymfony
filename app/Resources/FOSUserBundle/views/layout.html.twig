@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+ {% block stylesheets %}
+     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+     <link rel="stylesheet" href="{{ asset('css/front/main.css') }}" />
+     <link rel="stylesheet" href="{{ asset('css/front/contact.css') }}" />
+ {% endblock %}
+=======
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +24,6 @@
                 {#<a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>#}
             {#{% endif %}#}
         {#</div>#}
-
         {% if app.request.hasPreviousSession %}
             {% for type, messages in app.session.flashbag.all() %}
                 {% for message in messages %}
@@ -27,6 +34,9 @@
             {% endfor %}
         {% endif %}
 
+{% block content %}
+    {% block fos_user_content %}{% endblock %}
+{% endblock %}
         <div>
             {% block fos_user_content %}
             {% endblock fos_user_content %}
