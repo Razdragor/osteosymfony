@@ -37,12 +37,6 @@ class User extends BaseUser
     protected $lastname;
 
     /**
-     * @ORM\ManyToOne(targetEntity="UserType", inversedBy="users")
-     * @ORM\JoinColumn(name="usertype_id", referencedColumnName="id")
-     */
-    private $type;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="createdAt", type="datetime",nullable=true)
@@ -55,6 +49,11 @@ class User extends BaseUser
          * @ORM\Column(name="isActivate", type="integer",nullable=true)
      */
     private $isActivate;
+
+    /**
+     * @ORM\Column(name="role", type="string", length=255)
+     */
+    protected $role;
 
     /**
      * Get id
@@ -136,30 +135,6 @@ class User extends BaseUser
     public function getLastname()
     {
         return $this->lastname;
-    }
-
-    /**
-     * Set type
-     *
-     * @param integer $type
-     *
-     * @return User
-     */
-    public function setType(UserType $type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return int
-     */
-    public function getType()
-    {
-        return $this->type;
     }
 
     /**
@@ -248,5 +223,19 @@ class User extends BaseUser
 //        $this->created = $now;
 //        $this->updated = $now;
 //    }
+    public function getRole()
+    {
+        return $this->role;
+    }
+    public function setRole($role)
+    {
+        $this->role = $role;
+        return $this;
+    }
+
+    public function getRoles()
+    {
+        return array($this->role);
+    }
 }
 

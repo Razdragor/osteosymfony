@@ -6,40 +6,53 @@
  * Time: 20:14
  */
 
-use FOS\UserBundle\FOSUserEvents;
-use FOS\UserBundle\Event\FormEvent;
-use Symfony\Component\DependencyInjection\Container;
+namespace AppBundle\Suscriber;
+
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+
+
 
 class AddDefaultRoleListener implements EventSubscriberInterface {
 
-    private $container;
-
-    public function __construct(Container $container)
-    {
-        $this->container = $container;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
+//    public static function getSubscribedEvents()
+//    {
+//        return array(
+//            FOSUserEvents::REGISTRATION_SUCCESS => 'onAddDefaultRoleSuccess',
+//        );
+//    }
     public static function getSubscribedEvents()
     {
-        return array(
-            FOSUserEvents::REGISTRATION_SUCCESS => 'onAddDefaultRoleSuccess',
-        );
+        return array(FormEvents::POST_SUBMIT => 'setRole');
     }
 
-    public function onAddDefaultRoleSuccess(FormEvent $event)
+//    public function onAddDefaultRoleSuccess(FormEvents $event)
+//
+//    {
+//        $doctrine = $this->container->get('doctrine');
+//        $em = $doctrine->getManager();
+//
+//        $user = $event->getForm()->getData();
+//        $user->addRole('ROLE_USER');
+//        //$user->setRoles(array('ROLE_USER'));
+//
+//        $em->persist($user);
+//    }
+
+    public function setRole(FormEvent $event)
     {
-        $doctrine = $this->container->get('doctrine');
-        $em = $doctrine->getManager();
+        $aRoles = array('ROLE_USER','ROLE_ASSOC');
+
+        /** @var $user \FOS\UserBundle\Model\UserInterface */
 
         $user = $event->getForm()->getData();
-        $user->addRole('ROLE_USER');
-        //$user->setRoles(array('ROLE_USER'));
 
-        $em->persist($user);
+//        var_dump($user);
+//        die();
+//
+//        $user->setRoles($user->getRoles());
+//        else
+//            $user->addRole('ROLE_USER');
     }
 }

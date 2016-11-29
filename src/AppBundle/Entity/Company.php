@@ -60,7 +60,6 @@ class Company
      */
     private $phone;
 
-
     /**
      * Get id
      *
@@ -87,9 +86,9 @@ class Company
 
     /**
      * Get name
-     *
-     * @return string
-     */
+*
+* @return string
+*/
     public function getName()
     {
         return $this->name;

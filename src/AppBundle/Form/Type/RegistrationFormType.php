@@ -4,6 +4,7 @@ namespace AppBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
+use AppBundle\Suscriber\AddDefaultRoleListener;
 
 class RegistrationFormType extends AbstractType
 {
@@ -12,33 +13,31 @@ class RegistrationFormType extends AbstractType
         parent::buildForm($builder, $options);
 
         // Ajoutez vos champs ici, revoilà notre champ *location* :
-        $builder->add('type', ChoiceType::class, array(
+        $builder->add('role', ChoiceType::class, array(
             'choices'   => array(
-                'Patient'   => 'ROLE_PATIENT',
-                'Professionnel'        => 'ROLE_PRO'
-            ),
-            'mapped' => false,
-            'multiple'  => false,
+                'Patient'   => 'PATIENT',
+                'Professionnel' => 'PROF'
+            )
         ));
-        $builder->addEventSubscriber(new \AddDefaultRoleListener());
+        $builder->addEventSubscriber(new AddDefaultRoleListener());
     }
 
-    public function getParent()
-    {
-        return 'FOS\UserBundle\Form\Type\RegistrationFormType';
+public function getParent()
+{
+    return 'FOS\UserBundle\Form\Type\RegistrationFormType';
 
-        // Or for Symfony < 2.8
-        // return 'fos_user_registration';
-    }
+    // Or for Symfony < 2.8
+    // return 'fos_user_registration';
+}
 
-    public function getBlockPrefix()
-    {
-        return 'app_user_registration';
-    }
+public function getBlockPrefix()
+{
+    return 'app_user_registration';
+}
 
-    // For Symfony 2.x
-    public function getName()
-    {
-        return $this->getBlockPrefix();
-    }
+// For Symfony 2.x
+public function getName()
+{
+    return $this->getBlockPrefix();
+}
 }
