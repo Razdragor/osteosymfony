@@ -3,6 +3,7 @@ namespace AppBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use AppBundle\Suscriber\AddDefaultRoleListener;
 
@@ -13,6 +14,9 @@ class RegistrationFormType extends AbstractType
         parent::buildForm($builder, $options);
 
         // Ajoutez vos champs ici, revoilà notre champ *location* :
+        $builder->add('firstname', TextType::class);
+        $builder->add('lastname', TextType::class);
+
         $builder->add('role', ChoiceType::class, array(
             'choices'   => array(
                 'Patient'   => 'PATIENT',

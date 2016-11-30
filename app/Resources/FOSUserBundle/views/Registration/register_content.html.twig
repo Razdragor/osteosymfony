@@ -7,15 +7,7 @@
 
 {#//patient#}
 {#//professionel#}
-{#//entreprise#}
-
-
-{#{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}#}
-    {#{{ form_widget(form) }}#}
-    {#<div>#}
-        {#<input type="submit" value="{{ 'registration.submit'|trans }}" />#}
-    {#</div>#}
-{#{{ form_end(form) }}#}
+{#//entreprise already have an account#}
 
 <div class="login-box">
     <div class="login-logo">
@@ -25,6 +17,31 @@
 
         <form action="{{ path('fos_user_registration_register') }}" method="POST" class="form-horizontal fos_user_registration_register" role="form">
             {{ form_errors(form) }}
+
+            <div class="form-group{% if form.firstname.vars.errors[0].message is defined %} has-error{% endif %}">
+            {{ form_label(form.firstname, null, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                <div class="col-sm-9">
+                    {{ form_widget(form.firstname, {'attr': {'class': 'form-control'}}) }}
+                    {% if form.firstname.vars.errors[0].message is defined %}
+                        <span class="help-block">
+                            {{ form.firstname.vars.errors[0].message }}
+                        </span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="form-group{% if form.lastname.vars.errors[0].message is defined %} has-error{% endif %}">
+                {{ form_label(form.lastname, null, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                <div class="col-sm-9">
+                    {{ form_widget(form.lastname, {'attr': {'class': 'form-control'}}) }}
+                    {% if form.lastname.vars.errors[0].message is defined %}
+                        <span class="help-block">
+                            {{ form.lastname.vars.errors[0].message }}
+                        </span>
+                    {% endif %}
+                </div>
+            </div>
+
             <div class="form-group{% if form.email.vars.errors[0].message is defined %} has-error{% endif %}">
                 {{ form_label(form.email, null, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
                 <div class="col-sm-9">
@@ -37,12 +54,6 @@
                 </div>
             </div>
 
-            {#<div class="form-group has-feedback">#}
-                {#<input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}"/>#}
-                {#<span class="glyphicon glyphicon-envelope form-control-feedback"></span>#}
-            {#</div>#}
-
-
             <div class="form-group{% if form.username.vars.errors[0].message is defined %} has-error{% endif %}">
                 {{ form_label(form.username, null, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
                 <div class="col-sm-9">
@@ -54,6 +65,7 @@
                     {% endif %}
                 </div>
             </div>
+
             <div class="form-group{% if form.plainPassword.first.vars.errors[0].message is defined %} has-error{% endif %}">
                 {{ form_label(form.plainPassword.first, null, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
                 <div class="col-sm-9">
@@ -65,6 +77,7 @@
                     {% endif %}
                 </div>
             </div>
+
             <div class="form-group{% if form.plainPassword.second.vars.errors[0].message is defined %} has-error{% endif %}">
                 {{ form_label(form.plainPassword.second, null, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
                 <div class="col-sm-9">
@@ -76,12 +89,12 @@
                     {% endif %}
                 </div>
             </div>
+
             {{ form_rest(form) }}
+
             <div class="row">
                 <button class="btn btn-primary btn-block btn-flat" type="submit">{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}</button>
             </div>
-
         </form>
-
     </div>
 </div>
