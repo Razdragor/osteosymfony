@@ -13,7 +13,13 @@
     <body>
         <header id="nav">
             <nav class="menu">
-                <a href="/" class="logo"></a>
+                <a href="{{ path("index") }}" class="logo"></a>
+                {% if app.user.role == "PATIENT" %}
+                    <a href="" class="link-menu">Rendez-vous</a>
+                    <a href="" class="link-menu">Agenda</a>
+                    <a href="" class="link-menu">Trouver un professionel</a>
+                    <a href="{{  path('user_show', { 'id': app.user.id }) }}" class="link-menu">Profile</a>
+                {% endif %}
             </nav>
         </header>
 

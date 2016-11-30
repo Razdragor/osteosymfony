@@ -91,3 +91,9 @@ a{
     background: 0 0;
     text-decoration: none;
 }
+a.link-menu {
+    padding: 5px;
+    display: block;
+    float: right;
+    margin-top: 20px;
+}
