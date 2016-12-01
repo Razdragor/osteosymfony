@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{#<link rel="stylesheet" href="{{ asset('bundles/adesignscalendar/css/fullcalendar/fullcalendar.css') }}" />#}
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+    <link rel="stylesheet" href="{{ asset('bundles/fullcalendar/css/fullcalendar/fullcalendar.min.css') }}" />
+
+<section id="content" role="main" data-display="www.presenceosteo.fr.home" style="padding-top: 120px;">
+
+    {#{% include 'ADesignsCalendarBundle::calendar.html.twig' %}#}
+    {% include '@FullCalendar/Calendar/calendar.html.twig' %}
+</section>
+    {% endblock %}
