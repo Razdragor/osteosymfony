@@ -97,3 +97,7 @@ a.link-menu {
     float: right;
     margin-top: 20px;
 }
+
+#content {
+    background-color: white;
+}
