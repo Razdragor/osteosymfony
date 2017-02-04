@@ -7,6 +7,8 @@
             <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
             <link rel="stylesheet" href="{{ asset('css/front/main.css') }}" />
             <link rel="stylesheet" href="{{ asset('css/front/contact.css') }}" />
+            <link rel="stylesheet" href="{{ asset('bundles/fullcalendar/css/fullcalendar/fullcalendar.min.css') }}" />
+
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -24,7 +26,16 @@
         </header>
 
         {% block body %}{% endblock %}
+
         {% block javascripts %}
+            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/jquery.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/moment.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('js/fullcalendar.default-settings.js') }}"></script>
+
+
         {% endblock %}
 
         <footer id="links">
@@ -36,10 +47,7 @@
             <a href="/contact">Contact</a>
             <br><br>
             <span class="grey">2016© Présence Ostéo</span>
-            <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/jquery.min.js') }}"></script>
-            <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/moment.min.js') }}"></script>
-            <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.min.js') }}"></script>
-            <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.default-settings.js') }}"></script>
+
         </footer>
     </body>
 </html>

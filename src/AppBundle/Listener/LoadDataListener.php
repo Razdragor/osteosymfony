@@ -19,13 +19,13 @@ class LoadDataListener
      */
     public function loadData(CalendarEvent $calendarEvent)
     {
-        $startDate = $calendarEvent->getStartDatetime();
-        $endDate = $calendarEvent->getEndDatetime();
-        $filters = $calendarEvent->getFilters();
+       // $startDate = $calendarEvent->getStartDatetime();
+//        $endDate = $calendarEvent->getEndDatetime();
+//        $filters = $calendarEvent->getFilters();
 
-        //You may want do a custom query to populate the events
+        $ev = new Event('Event Title 1', new \DateTime());
+            //You may want do a custom query to populate the events
 
-        $calendarEvent->addEvent(new Event('Event Title 1', new \DateTime()));
-        $calendarEvent->addEvent(new Event('Event Title 2', new \DateTime()));
+        $calendarEvent->addEvent(new Event('Event Title 2', new \DateTime('2016-12-12')));
     }
 }

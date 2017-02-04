@@ -25,15 +25,7 @@ class AppController extends Controller
         return $this->render('front/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
         ]);
-    }    /**
-     * @Route("/calendar", name="calendar")
-     */
-    public function CalendarAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        return $this->render('front/calendar/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
-        ]);
     }
+
 
 }
